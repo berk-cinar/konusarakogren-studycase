@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "konusarakogren2",
-    "slug": "konusarakogren2",
+    "name": "konusarakogren",
+    "slug": "konusarakogren",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -16,14 +16,16 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.berkcinr.konusarakogren"
     },
     "android": {
       "useNextNotificationsApi": true,
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.berkcinr.konusarakogren"
     },
     "web": {
       "bundler": "metro",
@@ -35,6 +37,14 @@
     ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "e6e3bd16-276f-4a60-8cbe-a2ed87a3fcc4"
+      }
     }
   }
 }

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Image, StyleSheet, Text, View, ActivityIndicator, ScrollView, TextInput, TouchableOpacity } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Pagination from '../components/Pagination'; // Pagination bileşenini import edin
+import Pagination from '../components/Pagination';
 
 import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
@@ -20,7 +20,7 @@ export default function Details() {
         const [filteredCharacters, setFilteredCharacters] = useState<any[]>([]);
         const [loading, setLoading] = useState(true);
         const [search, setSearch] = useState('');
-        const [currentPage, setCurrentPage] = useState(1); // Mevcut sayfa numarasını tutar
+        const [currentPage, setCurrentPage] = useState(1); 
 
         const route = useRoute<DetailsScreenRouteProp>();
         const { id } = route.params;
@@ -70,7 +70,7 @@ export default function Details() {
                 }
         };
 
-        // Pagination işlevselliği
+
         const onPageChange = (pageNumber: number) => {
                 setCurrentPage(pageNumber);
         };
@@ -103,11 +103,9 @@ export default function Details() {
                 );
         }
 
-        // Pagination bileşenine geçirilecek toplam sayfa sayısını belirleme
         const ITEMS_PER_PAGE = 10;
         const totalPages = Math.ceil(filteredCharacters.length / ITEMS_PER_PAGE);
 
-        // Sayfaya göre filtrelenmiş karakter listesi
         const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
         const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, filteredCharacters.length);
         const charactersOnPage = filteredCharacters.slice(startIndex, endIndex);
@@ -202,7 +200,7 @@ const styles = StyleSheet.create({
         },
         characterCardWrapper: {
                 width: '50%',
-                position: 'relative', // Bunu ekleyin
+                position: 'relative',
         },
         card: {
                 backgroundColor: '#fff',
@@ -239,9 +237,8 @@ const styles = StyleSheet.create({
                 height: 0,
         },
         favoriteButton: {
-                position: 'absolute', // Bunu ekleyin
-                top: 10, // Kartın sağ üst köşesine yerleştirmek için
-                right: 10, // Kartın sağ üst köşesine yerleştirmek için
-                zIndex: 1, // Kartın üstünde olması için
-        },
+                position: 'absolute',
+                top: 10, 
+                right: 10, 
+                zIndex: 1,
 });

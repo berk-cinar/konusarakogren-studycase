@@ -31,16 +31,6 @@ export default function Index() {
 }
 `;
 
-const layoutContent = `import { Stack } from "expo-router";
-
-export default function RootLayout() {
-  return (
-    <Stack>
-      <Stack.Screen name="index" />
-    </Stack>
-  );
-}
-`;
 
 fs.rename(oldDirPath, newDirPath, (error) => {
   if (error) {
